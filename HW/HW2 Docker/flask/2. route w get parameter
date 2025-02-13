@@ -1,0 +1,13 @@
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % curl "http://localhost:5002/repeat?input=foo" 
+
+{
+  "body": "foo",
+  "status": 200
+}
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % curl "http://localhost:5002/repeat?input=test"
+
+{
+  "body": "test",
+  "status": 200
+}
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % 
