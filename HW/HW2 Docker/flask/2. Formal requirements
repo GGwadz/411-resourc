@@ -1,0 +1,11 @@
+1. Goal: Run user studies to gauge user experience of SnickerSynce. See how the 
+merge operations are received with the snicker feature.
+    non-Goal: No stress testing of the performance of SnickerSynce itself, simply
+    meant to gauge user experience and applicability.
+2. 1: Access control for SnickerSynce management. 
+      func req 1: Allowing the project manager and only the pm to have admin access.
+      func req 2: Logs for changes and modifications of the snickering concepts.
+   2: Random user assignment for variant and control groups in the study.
+      func req 1: Automated random assignment for groups
+      func req 2: Tracker for previously stated group assignments
+   
