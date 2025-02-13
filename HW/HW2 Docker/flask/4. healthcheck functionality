@@ -1,0 +1,11 @@
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"
+
+CONTAINER ID   NAMES             STATUS
+1dd8b05a0d8d   flask-container   Up About a minute (health: starting)
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % curl http://localhost:5002/hang
+
+^C
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"
+
+CONTAINER ID   NAMES             STATUS
+1dd8b05a0d8d   flask-container   Up 5 minutes (unhealthy)
