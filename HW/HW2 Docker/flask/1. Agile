@@ -1,0 +1,11 @@
+1.1 ...I want to create a guide and CLI commands mirroring Git, increasing productivity
+without relearning everything.
+1.2 ... I want to implement a means of verifying the setup and permissions of the team
+to ensure efficient workflow.
+2. User story 3: Implement a command allowing the preview of merge conflicts prior to 
+resolving them. The task is forming a way to allow this preview of merge conflicts to 
+take place. The associated tickets are implementing the merge conflict preview and 
+the ubsequent addition of user interface that allows the merge conflict preview.
+3. This is not a user story. A user story describes a feature and / or requirement
+in a development project. This has no clear goal which shows an obvious user need.
+It essentially lacks specificity. This is a task.
