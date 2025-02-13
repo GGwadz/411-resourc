@@ -1,0 +1,40 @@
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker build -t flask-app .
+
+[+] Building 1.6s (11/11) FINISHED                              docker:desktop-linux
+ => [internal] load build definition from dockerfile                            0.0s
+ => => transferring dockerfile: 1.06kB                                          0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:22.04                 0.3s
+ => [auth] library/ubuntu:pull token for registry-1.docker.io                   0.0s
+ => [internal] load .dockerignore                                               0.0s
+ => => transferring context: 2B                                                 0.0s
+ => [1/5] FROM docker.io/library/ubuntu:22.04@sha256:ed1544e454989078f5dec1bfd  0.0s
+ => [internal] load build context                                               0.0s
+ => => transferring context: 463B                                               0.0s
+ => CACHED [2/5] WORKDIR /app                                                   0.0s
+ => CACHED [3/5] RUN apt-get update && apt-get install -y     python3     pyth  0.0s
+ => [4/5] COPY . /app                                                           0.0s
+ => [5/5] RUN pip install flask                                                 1.2s
+ => exporting to image                                                          0.0s
+ => => exporting layers                                                         0.0s
+ => => writing image sha256:62659a48ac87d9ece9dac0a23948ec725eba702917b6fd762a  0.0s
+ => => naming to docker.io/library/flask-app                                    0.0s
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker run -d -p 5002:5002 --name flask-container flask-app
+
+docker: Error response from daemon: Conflict. The container name "/flask-container" is already in use by container "462e1ee3dd179b266f5f74e107872703074ada0e43cb43cf8342712d6273aebf". You have to remove (or rename) that container to be able to reuse that name.
+See 'docker run --help'.
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker ps
+CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS          PORTS                    NAMES
+462e1ee3dd17   076b0ca8b4c0   "python3 app.py"   10 minutes ago   Up 10 minutes   0.0.0.0:5002->5002/tcp   flask-container
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker stop flask-container
+flask-container
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker rm flask-container
+flask-container
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % docker run -d -p 5002:5002 --name flask-container flask-app
+
+296464f90979d8cc4f4148ec4b7a96bd200cb5cba2af21bab1f42ab33fd12c96
+(base) grantgwadz@crc-dot1x-nat-10-239-59-131 projects % curl http://localhost:5002/
+
+{
+  "response": "Hello, World!",
+  "status": 200
+}
